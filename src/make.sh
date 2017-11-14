@@ -1,4 +1,5 @@
 #!/bin/bash
+# rm -f *.cmi *.cmo ftest
 ocamlbuild ftest.native
 
 # Si ça marche pas, peut être un truc comme ça
