@@ -1,6 +1,6 @@
 #!/bin/bash
 # rm -f *.cmi *.cmo ftest
-ocamlbuild ftest.native
+ocamlbuild -Is lib,algo ftest.native
 
 # Si ça marche pas, peut être un truc comme ça
 # ocamlc -I lib/ -c lib/gfile.ml
