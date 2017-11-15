@@ -2,7 +2,7 @@
 
 if [ "$#" != 4 ] 
 then
-	echo "Chibre"
+	echo "Usage: ./ftest.native infile source sink outfile"
 	exit
 fi
 
