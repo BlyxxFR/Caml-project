@@ -1,4 +1,5 @@
 open Graph
+open FordFulkerson
 
 let () =
 
@@ -19,7 +20,8 @@ let () =
 
   (* Rewrite the graph that has been read. *)
   let () = Gfile.export outfile _graph in
-	  ()
+	  let () = FordFulkerson.algo _graph _source _sink in
+  		()
 
 
 
