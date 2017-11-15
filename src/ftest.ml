@@ -18,7 +18,8 @@ let () =
 	let _graph = Graph.map graph (fun v -> v) (fun e -> string_of_int ((int_of_string e) + 2)) in
 
   (* Rewrite the graph that has been read. *)
-  let () = Gfile.write_file outfile _graph in
-  ()
+  let () = Gfile.export outfile _graph in
+	  ()
+
 
 

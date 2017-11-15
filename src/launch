@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ "$#" != 4 ] 
+then
+	echo "Chibre"
+	exit
+fi
+
+./make
+./ftest.native $1 $2 $3 $4
+dot -Tpng $4 > "$4.png"
+display "$4.png"
+
