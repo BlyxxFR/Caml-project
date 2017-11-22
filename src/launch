@@ -8,6 +8,6 @@ fi
 
 ./make
 ./ftest.native $1 $2 $3 $4
-dot -Tpng $4 > "$4.png"
-display "$4.png"
+dot -Tpng "output/$4" > "output/$4.png"
+display "output/$4.png"
 

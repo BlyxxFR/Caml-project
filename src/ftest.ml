@@ -9,10 +9,10 @@ let () =
       exit 0
     end ;
 
-  let infile = Sys.argv.(1)
+  let infile = "graph/" ^ Sys.argv.(1)
   and _source = Sys.argv.(2)
   and _sink = Sys.argv.(3)
-  and outfile = Sys.argv.(4) in
+  and outfile = "output/" ^ Sys.argv.(4) in
 
   let graph = Gfile.from_file infile in
 
