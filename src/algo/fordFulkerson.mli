@@ -2,4 +2,4 @@
 
 open Graph
 
-val algo: (string, string) graph -> Graph.id -> Graph.id -> unit
+val algo: (string, int) graph -> id -> id -> (string, string) graph

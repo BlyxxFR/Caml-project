@@ -1,5 +1,6 @@
 open Graph
 open FordFulkerson
+open AttributionProjets
 
 let () =
 
@@ -9,19 +10,20 @@ let () =
       exit 0
     end ;
 
-  let infile = "graph/" ^ Sys.argv.(1)
+  let infile = "application/" ^ Sys.argv.(1)
   and _source = Sys.argv.(2)
   and _sink = Sys.argv.(3)
   and outfile = "output/" ^ Sys.argv.(4) in
 
+(*
   let graph = Gfile.from_file infile in
 
-	let _graph = Graph.map graph (fun v -> v) (fun e -> string_of_int ((int_of_string e) + 2)) in
-
   (* Rewrite the graph that has been read. *)
-  let () = Gfile.export outfile _graph in
-	  let () = FordFulkerson.algo _graph _source _sink in
-  		()
-
-
-
+  let () = Gfile.export outfile graph in
+	  let graph_flot = FordFulkerson.algo (Graph.map graph (fun v -> v) (fun e -> int_of_string e)) _source _sink in
+		 let () = Gfile.export (outfile ^ "_flot") graph_flot in
+			()
+*)
+let graph = AttributionProjets.algo infile in 
+	let () = Gfile.export outfile graph in
+		()

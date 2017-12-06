@@ -10,18 +10,18 @@ type id = string
 
 (* Information about vertices. *)
 type ('v, 'e) vertex_info =
-  { (* Each vertex has a label. *)
-    label: 'v ;
+    { (* Each vertex has a label. *)
+      label: 'v ;
 
-    (* A unique identifier. *)
-    id: id ;
+      (* A unique identifier. *)
+      id: id ;
 
-    (* Outgoing edges : a list of edge label & destination vertex. *)
-    outedges: ('e * id) list ;
+      (* Outgoing edges : a list of edge label & destination vertex. *)
+      outedges: ('e * id) list ;
 
-    (* Ingoing edges : a list of edge label & origin vertex. 
-     * The list is empty if the back option is false (see new_graph). *)
-    inedges: ('e * id) list }
+      (* Ingoing edges : a list of edge label & origin vertex. 
+       * The list is empty if the back option is false (see new_graph). *)
+      inedges: ('e * id) list }
 
 
 (* Find a vertex given an id.
@@ -45,6 +45,8 @@ val add_vertex: ('v, 'e) graph -> 'v -> id -> unit
  * If an edge already exists between id1 and id2, its label is replaced by this one. *)
 val add_edge: ('v, 'e) graph -> id -> id -> 'e -> unit
 
+(**************  DESTRUCTORS  **************)
+val remove_edge: ('v, 'e) graph -> id -> id -> unit
 
 (**************  COMBINATORS, ITERATORS  **************)
 

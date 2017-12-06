@@ -58,6 +58,24 @@ let add_edge graph id1 id2 elabel =
     ()
 
 
+(**************  DESTRUCTORS  **************)
+
+let remove_edge graph id1 id2 =
+  (* Get vertex_info of origin and destination. *)
+  let origin_info = find_vertex graph id1
+  and dest_info   = find_vertex graph id2 in
+
+  (* Remove the given edge. *)
+  let new_outedges = List.filter (fun (_, id) -> id <> id2) origin_info.outedges
+  and new_inedges  = List.filter (fun (_, id) -> id <> id1) dest_info.inedges in
+
+    (* Put it back in the hashtable. *)
+    Hashtbl.replace graph.vertices id1 { origin_info with outedges = new_outedges } ;
+    Hashtbl.replace graph.vertices id2 { dest_info with inedges = new_inedges } ;
+
+    (* Done. *)
+    ()
+
 (**************  COMBINATORS, ITERATORS  **************)
 
 let v_iter graph f = Hashtbl.iter (fun _ info -> f info) graph.vertices

@@ -1,0 +1,20 @@
+student 1 "Jean Paul Jacques"
+student 2 "Jean-Célestin"
+student 3 "Jean-Mouloud"
+student 4 "Didier Le Maître"
+
+project 1 "QLF" 2 
+project 2 "ALR" 1
+project 3 "GLZ" 1
+
+choice 0 2
+choice 0 3
+
+choice 1 1
+choice 1 2
+
+choice 2 1
+choice 2 2
+choice 2 3
+
+choice 3 1

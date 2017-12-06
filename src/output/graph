@@ -1,0 +1,15 @@
+digraph finite_state_machine {
+    rankdir=V_;
+    size="8,5"
+    node [shape = circle];
+    V_QLF -> V_GLZ [ label = "1" ];
+    V_QLF -> V_Sink [ label = "2" ];
+    V_QLF -> V_ALR [ label = "1" ];
+    V_Sink -> V_ALR [ label = "1" ];
+    V_Sink -> V_QLF [ label = "1" ];
+    V_Source -> V_GLZ [ label = "1" ];
+    V_Source -> V_ALR [ label = "1" ];
+    V_GLZ -> V_Sink [ label = "1" ];
+    V_ALR -> V_QLF [ label = "1" ];
+    V_ALR -> V_Sink [ label = "1" ];
+}

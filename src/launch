@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 
 if [ "$#" != 4 ] 
 then
@@ -11,3 +12,4 @@ fi
 dot -Tpng "output/$4" > "output/$4.png"
 display "output/$4.png"
 
+echo ""

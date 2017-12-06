@@ -69,12 +69,12 @@ let export path graph =
   let outfile = open_out path in
   let out fmt = Printf.fprintf outfile fmt in
     out "digraph finite_state_machine {\n" ;
-    out "    rankdir=V;\n" ;
+    out "    rankdir=V_;\n" ;
     out "    size=\"8,5\"\n" ;
     out "    node [shape = circle];\n" ;
     v_iter graph (fun vi -> 
-                   List.iter (fun (label, id2) -> 
-                               out "    V_%s -> V_%s [ label = \"%s\" ];\n"  vi.id id2 label) 
+                   List.iter (fun (label, id2) -> let dest_info = find_vertex graph id2 in
+                               out "    V_%s -> V_%s [ label = \"%s\" ];\n"  vi.label dest_info.label label) 
                      vi.outedges) ;
     out "}" ;
     close_out outfile ;
