@@ -4,7 +4,7 @@ Usage: `./launch infile source sink outfile` : to call FordFulkerson on a graph
 
 Usage: `./launch infile outfile` : to test the application
 
-Don't write the directory's name, juste the file name. Graph file need to be putted in the graph directory, application file need to be putted in the application one.
+Don't write the directory's name, juste the file name. Graph files need to be putted in the graph directory, application files need to be putted in the application one.
 
 # Application
 
