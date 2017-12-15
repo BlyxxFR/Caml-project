@@ -15,8 +15,8 @@ then
 	outfile="output/$4"
 	./ftest.native $infile $source $sink $outfile
 else
-	echo "Usage: ./ftest.native infile source sink outfile to call FordFulkerson on a graph"
-	echo "Usage: ./ftest.native infile outfile to test the application"
+	echo "Usage: ./launch infile source sink outfile : to call FordFulkerson on a graph"
+	echo "Usage: ./launch infile outfile : to test the application"
 	exit
 fi
 
