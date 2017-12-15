@@ -112,3 +112,4 @@ let algo graph _src _dest =
   in
     v_iter graph_flot (fun vertex_info -> construire_labels vertex_info.id vertex_info.outedges) ;
     graph_flot
+

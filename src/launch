@@ -1,15 +1,26 @@
 #!/bin/bash
 clear
+./make
 
-if [ "$#" != 4 ] 
+if [ "$#" == 2 ] 
 then
-	echo "Usage: ./ftest.native infile source sink outfile"
+	infile="application/$1"
+	outfile="output/$2"
+	./ftest.native $infile $outfile
+elif [ "$#" == 4 ]
+then
+	infile="graph/$1"
+	source=$2
+	sink=$3
+	outfile="output/$4"
+	./ftest.native $infile $source $sink $outfile
+else
+	echo "Usage: ./ftest.native infile source sink outfile to call FordFulkerson on a graph"
+	echo "Usage: ./ftest.native infile outfile to test the application"
 	exit
 fi
 
-./make
-./ftest.native $1 $2 $3 $4
-dot -Tpng "output/$4" > "output/$4.png"
-display "output/$4.png"
+dot -Tpng $outfile > "$outfile.png"
+display "$outfile.png"
 
 echo ""
