@@ -1,6 +1,6 @@
-# Caml-project
+# INSA Toulouse - 4IR - Caml Project - Ford Fulkerson
 
-Usage: `./launch infile source sink outfile` : to call FordFulkerson on a graph
+Usage: `./launch infile source sink outfile` : to call Ford Fulkerson on a graph
 
 Usage: `./launch infile outfile` : to test the application
 
